@@ -1,7 +1,7 @@
 export const thumbnailImages = [
   {
     id: 1,
-    src: "./product/product1.jpg",
+    src: "./product/product/black1.jpg",
     alt: "img_product",
   },
   {

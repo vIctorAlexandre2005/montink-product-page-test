@@ -1,5 +1,6 @@
 import { formatBRL } from "@/utils/formatBRL";
 import { FaStar } from "react-icons/fa";
+import { Variants } from "./Variants";
 
 export function ProductInfo() {
   return (
@@ -32,31 +33,7 @@ export function ProductInfo() {
         entregam graves profundos e som equilibrado com a assinatura Philips.
       </p>
       <div className="border border-slate-200 w-full"></div>
-      <div className="flex flex-col gap-2">
-        <p className="text-xl font-semibold text-slate-700">Selecionar cores</p>
-        <div className="flex gap-2">
-          <button className="w-8 h-8 bg-red-500 rounded-full cursor-pointer"></button>
-          <button className="w-8 h-8 bg-blue-500 rounded-full cursor-pointer"></button>
-          <button className="w-8 h-8 bg-green-500 rounded-full cursor-pointer"></button>
-        </div>
-      </div>
-      <div className="border border-slate-200 w-full"></div>
-      <div className="flex flex-col gap-2">
-        <p className="text-xl font-semibold text-slate-700">
-          Selecionar tamanho
-        </p>
-        <div className="flex gap-2">
-          <button className="w-auto h-auto p-3 text-sm hover:bg-slate-900 hover:text-white transition duration-300 font-normal bg-slate-200 rounded-full cursor-pointer">
-            Pequeno
-          </button>
-          <button className="w-auto h-auto p-3 text-sm hover:bg-slate-900 hover:text-white transition duration-300 font-normal bg-slate-200 rounded-full cursor-pointer">
-            Médio
-          </button>
-          <button className="w-auto h-auto p-3 text-sm hover:bg-slate-900 hover:text-white transition duration-300 font-normal bg-slate-200 rounded-full cursor-pointer">
-            Grande
-          </button>
-        </div>
-      </div>
+      <Variants />
       {/* <div className="border border-slate-200 w-full"></div> */}
     </div>
   );

@@ -1,8 +1,37 @@
 import { useSelectThumb } from "@/hooks/useSelectThumb";
-import { thumbnailImages } from "@/utils/thumbnailProducts";
+import { useVariants } from "@/hooks/useVariants";
 
 export function ProductGallery() {
-    const { thumb, selectThumb } = useSelectThumb();
+  const { thumb, selectThumb } = useSelectThumb();
+  const { variants } = useVariants();
+  const variantColor = variants?.color || "black";
+  const thumbnailImages = [
+    {
+      id: 1,
+      src: `./product/${variantColor}/product_${variantColor}_1.jpg`,
+      alt: "img_product",
+    },
+    {
+      id: 2,
+      src: `./product/${variantColor}/product_${variantColor}_2.jpg`,
+      alt: "img_product",
+    },
+    {
+      id: 3,
+      src: `./product/${variantColor}/product_${variantColor}_3.jpg`,
+      alt: "img_product",
+    },
+    {
+      id: 4,
+      src: `./product/${variantColor}/product_${variantColor}_4.jpg`,
+      alt: "img_product",
+    },
+    {
+      id: 5,
+      src: `./product/${variantColor}/product_${variantColor}_5.jpg`,
+      alt: "img_product",
+    },
+  ];
   return (
     <div className="flex w-full items-center">
       <div className="flex max-sm:flex-col-reverse min-sm:justify-around lg:justify-center max-sm:gap-4 sm:gap-12 items-center">
