@@ -1,31 +1,8 @@
+import { useSelectThumb } from "@/hooks/useSelectThumb";
+import { thumbnailImages } from "@/utils/thumbnailProducts";
+
 export function ProductGallery() {
-  const thumbnailImages = [
-    {
-      id: 1,
-      src: "./product/product1.jpg",
-      alt: "img_product",
-    },
-    {
-      id: 2,
-      src: "./product/product2.jpg",
-      alt: "img_product",
-    },
-    {
-      id: 3,
-      src: "./product/product3.jpg",
-      alt: "img_product",
-    },
-    {
-      id: 4,
-      src: "./product/product4.jpg",
-      alt: "img_product",
-    },
-    {
-      id: 5,
-      src: "./product/product5.jpg",
-      alt: "img_product",
-    },
-  ];
+    const { thumb, selectThumb } = useSelectThumb();
   return (
     <div className="flex w-full items-center">
       <div className="flex max-sm:flex-col-reverse min-sm:justify-around lg:justify-center max-sm:gap-4 sm:gap-12 items-center">
@@ -34,6 +11,8 @@ export function ProductGallery() {
             <img
               key={image.id}
               src={image.src}
+              onClick={() => selectThumb(image.src)}
+              onMouseOver={() => selectThumb(image.src)}
               className="
                 max-sm:w-12 max-sm:h-12
                 sm:w-16 sm:h-16
@@ -47,7 +26,7 @@ export function ProductGallery() {
           ))}
         </div>
         <img
-          src={"./product/product2.jpg"}
+          src={thumb ? thumb : thumbnailImages[0].src}
           className="
             object-cover
             max-sm:w-[40%] max-sm:h-[40%]
