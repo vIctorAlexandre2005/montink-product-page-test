@@ -1,7 +1,7 @@
 import { formatBRL } from "@/utils/formatBRL";
-import { FaStar } from "react-icons/fa";
 import { Variants } from "./Variants";
 import { Delivery } from "./Delivery";
+import { RatingStars } from "../shared/RatingStars";
 
 export function ProductInfo() {
   return (
@@ -10,12 +10,7 @@ export function ProductInfo() {
         Fone de Ouvido Sem Fio TWS
       </h2>
       <div className="flex items-center gap-2">
-        <FaStar color="orange" size={24} />
-        <FaStar color="orange" size={24} />
-        <FaStar color="orange" size={24} />
-        <FaStar color="orange" size={24} />
-        <FaStar color="orange" size={24} />
-        <p className="text-gray-700 text-xl">(5/5)</p>
+        <RatingStars rating={5} />
       </div>
       <div className="flex gap-4">
         <p className="text-base font-semibold text-slate-700">

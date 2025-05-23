@@ -2,8 +2,8 @@ import {
   CepProductProps,
   CepProps,
   defaultValueCepProduct,
-} from "@/interface/cep";
-import { VariantProps } from "@/interface/variant";
+} from "@/types/cep";
+import { VariantProps } from "@/types/variant";
 import { getWithTTL } from "@/utils/storage";
 import {
   createContext,

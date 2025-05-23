@@ -2,7 +2,7 @@ import {
   defaultValueVariantProductProps,
   VariantProductProps,
   VariantProps,
-} from "@/interface/variant";
+} from "@/types/variant";
 import { createContext, useContext, ReactNode, useState } from "react";
 
 const VariantProductProvider = createContext<VariantProductProps>(

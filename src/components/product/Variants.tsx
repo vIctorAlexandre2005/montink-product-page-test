@@ -1,4 +1,4 @@
-import { useVariants } from "@/hooks/useVariants";
+import { useVariants } from "@/features/product/useVariants";
 import { colorsVariant, sizesVariant } from "@/utils/variants";
 
 export function Variants() {

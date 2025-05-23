@@ -1,5 +1,5 @@
 import { useContextCep } from "@/contexts/CepContext";
-import { getCep } from "@/services/cep";
+import { fetchCepData } from "@/services/fetchCepData";
 import { setWithTTL } from "@/utils/storage";
 import { useEffect } from "react";
 
@@ -8,7 +8,7 @@ export function useDelivery() {
 
   async function queryCep() {
     try {
-      const response = await getCep(cep);
+      const response = await fetchCepData(cep);
       setCepData(response);
       setWithTTL("cepData", response, 15);
     } catch (error) {

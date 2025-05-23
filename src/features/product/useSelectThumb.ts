@@ -12,10 +12,22 @@ export function useSelectThumb() {
     }
   }, [variants]);
 
+  function getThumbnailImages(variantColor: string) {
+    return Array.from({ length: 5 }, (_, i) => ({
+      id: i + 1,
+      src: `/product/${variantColor}/product_${variantColor}_${i + 1}.jpg`,
+      alt: "Produto",
+    }));
+  }
+
   function selectThumb(thumb: string) {
     setThumb(thumb);
     setWithTTL("thumb", thumb, 15);
   }
 
-  return { thumb, selectThumb };
+  function handleSelect(src: string) {
+    selectThumb(src);
+  }
+
+  return { thumb, selectThumb, getThumbnailImages, handleSelect };
 }

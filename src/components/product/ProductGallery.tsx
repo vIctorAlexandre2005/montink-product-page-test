@@ -1,47 +1,22 @@
-import { useSelectThumb } from "@/hooks/useSelectThumb";
-import { useVariants } from "@/hooks/useVariants";
+import { useSelectThumb } from "@/features/product/useSelectThumb";
+import { useVariants } from "@/features/product/useVariants";
 
 export function ProductGallery() {
-  const { thumb, selectThumb } = useSelectThumb();
+  const { thumb, selectThumb, getThumbnailImages, handleSelect } = useSelectThumb();
   const { variants } = useVariants();
   const variantColor = variants?.color || "black";
-  const thumbnailImages = [
-    {
-      id: 1,
-      src: `./product/${variantColor}/product_${variantColor}_1.jpg`,
-      alt: "img_product",
-    },
-    {
-      id: 2,
-      src: `./product/${variantColor}/product_${variantColor}_2.jpg`,
-      alt: "img_product",
-    },
-    {
-      id: 3,
-      src: `./product/${variantColor}/product_${variantColor}_3.jpg`,
-      alt: "img_product",
-    },
-    {
-      id: 4,
-      src: `./product/${variantColor}/product_${variantColor}_4.jpg`,
-      alt: "img_product",
-    },
-    {
-      id: 5,
-      src: `./product/${variantColor}/product_${variantColor}_5.jpg`,
-      alt: "img_product",
-    },
-  ];
+  const thumbnails = getThumbnailImages(variantColor);
+
   return (
     <div className="flex w-full items-center">
       <div className="flex max-sm:flex-col-reverse min-sm:justify-around lg:justify-center max-sm:gap-4 sm:gap-12 items-center">
         <div className="flex max-sm:flex-row max-sm:w-full max-sm:justify-around sm:flex-col gap-4">
-          {thumbnailImages.map((image) => (
+          {thumbnails.map((image) => (
             <img
               key={image.id}
               src={image.src}
-              onClick={() => selectThumb(image.src)}
-              onMouseOver={() => selectThumb(image.src)}
+              onClick={() => handleSelect(image.src)}
+              onMouseOver={() => handleSelect(image.src)}
               className="
                 max-sm:w-12 max-sm:h-12
                 sm:w-16 sm:h-16
@@ -55,7 +30,7 @@ export function ProductGallery() {
           ))}
         </div>
         <img
-          src={thumb ? thumb : thumbnailImages[0].src}
+          src={thumb ? thumb : thumbnails[0].src}
           className="
             object-cover
             max-sm:w-[40%] max-sm:h-[40%]
