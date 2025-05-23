@@ -5,12 +5,18 @@ import { useEffect } from "react";
 
 export function useVariants() {
   const { variants, setVariants, setThumb } = useContextVariantProduct();
-  function selectVariant(key: string, value: string) {
+  function selectVariant(key: keyof VariantProps, value: string): void {
     const updatedVariants = { ...variants, [key]: value } as VariantProps;
-    setVariants(updatedVariants);
-    setWithTTL("variants", updatedVariants, 15); // salva a variant com TTL
-    if (key === "color") {
-      setThumb(""); // reseta o thumb ao trocar de cor
+
+    try {
+      setVariants(updatedVariants);
+      setWithTTL("variants", updatedVariants, 15);
+
+      if (key === "color") {
+        setThumb("");
+      }
+    } catch (error) {
+      console.error("Failed to select variant:", error);
     }
   }
 

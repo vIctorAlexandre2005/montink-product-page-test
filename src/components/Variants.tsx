@@ -6,7 +6,9 @@ export function Variants() {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex flex-col gap-2">
-        <p className="text-xl font-semibold text-slate-700">Selecionar cores</p>
+        <p className="text-xl font-semibold text-slate-700">
+          Cor selecionada: {variants?.color ? variants?.color : "Nenhuma"}
+        </p>
         <div className="flex gap-2">
           {colorsVariant.map((color) => (
             <button

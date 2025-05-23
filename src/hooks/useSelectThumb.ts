@@ -7,8 +7,6 @@ export function useSelectThumb() {
 
   useEffect(() => {
     const storedThumb = getWithTTL("thumb");
-
-    // Garante que só aplica se a cor atual estiver carregada
     if (storedThumb && storedThumb.includes(variants?.color)) {
       setThumb(storedThumb);
     }

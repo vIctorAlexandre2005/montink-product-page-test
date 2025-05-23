@@ -1,6 +1,7 @@
 import { formatBRL } from "@/utils/formatBRL";
 import { FaStar } from "react-icons/fa";
 import { Variants } from "./Variants";
+import { Delivery } from "./Delivery";
 
 export function ProductInfo() {
   return (
@@ -24,6 +25,7 @@ export function ProductInfo() {
           {formatBRL(299.99)}
         </p>
       </div>
+      <Delivery />
       <p className="w-full text-sm font-medium text-slate-700">
         Fones de ouvido com conexão Bluetooth estável e áudio de alta qualidade,
         ideais para músicas, podcasts e chamadas nítidas. Oferecem até 24 horas
