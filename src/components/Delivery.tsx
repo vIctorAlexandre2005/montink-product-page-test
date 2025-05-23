@@ -4,7 +4,6 @@ import { LuMapPinCheck, LuMapPinX } from "react-icons/lu";
 
 export function Delivery() {
   const { cep, setCep, cepData } = useDelivery();
-  console.log("cepData", cepData);
   return (
     <div className="flex flex-col gap-2">
       <p className="text-sm font-medium text-slate-700">
@@ -12,6 +11,7 @@ export function Delivery() {
       </p>
       <div className="flex items-center gap-1">
         <input
+          data-testid="cep-input"
           value={cep}
           onChange={(e) => setCep(e.target.value)}
           type="text"

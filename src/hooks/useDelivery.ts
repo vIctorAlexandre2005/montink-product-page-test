@@ -7,13 +7,12 @@ export function useDelivery() {
   const { cep, setCep, cepData, setCepData } = useContextCep();
 
   async function queryCep() {
-    if (cep.length < 8) return;
     try {
       const response = await getCep(cep);
       setCepData(response);
       setWithTTL("cepData", response, 15);
     } catch (error) {
-      throw new Error("Error fetching CEP data");
+      console.error("Error fetching CEP data");
     }
   }
 
