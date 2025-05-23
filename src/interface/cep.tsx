@@ -11,6 +11,7 @@ export interface CepProps {
   gia: string;
   ddd: string;
   siafi: string;
+  erro: string;
 }
 
 export interface CepProductProps {

@@ -19,10 +19,10 @@ export function ProductInfo() {
       </div>
       <div className="flex gap-4">
         <p className="text-base font-semibold text-slate-700">
-          {formatBRL(199.99)}
+          {formatBRL(89.9)}
         </p>
-        <p className="text-xl text-slate-400 font-semibold line-through">
-          {formatBRL(299.99)}
+        <p className="text-xl text-slate-400 font-medium line-through">
+          {formatBRL(119.9)}
         </p>
       </div>
       <Delivery />

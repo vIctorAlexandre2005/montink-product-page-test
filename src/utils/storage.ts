@@ -4,7 +4,6 @@ export function setWithTTL(key: string, value: any, ttlMinutes: number) {
     value,
     expiry: now.getTime() + ttlMinutes * 60 * 1000,
   };
-  console.log("setWithTTL", item);
   localStorage.setItem(key, JSON.stringify(item));
 }
 
