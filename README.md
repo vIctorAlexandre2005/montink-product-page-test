@@ -59,8 +59,8 @@ Este projeto foi desenvolvido como parte de um **teste técnico Front-End**. A p
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/pagina-produto.git
-cd pagina-produto
+git clone https://github.com/seu-usuario/montink-product-page-test.git
+cd montink-product-page-test
 
 ```
 ### 2. Instale as dependências
